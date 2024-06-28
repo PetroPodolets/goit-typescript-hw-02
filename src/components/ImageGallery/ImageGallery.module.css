@@ -1,0 +1,15 @@
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 48px 6px 6px 6px;
+    padding: 0;
+
+}
+
+.item {
+    width: calc((100% - 60px)/4);
+    height: 240px;
+}

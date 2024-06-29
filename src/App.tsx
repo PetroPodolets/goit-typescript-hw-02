@@ -25,7 +25,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const loadMoreButtonRef = useRef<HTMLButtonElement | null>(null);
-  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -75,10 +75,11 @@ const App: React.FC = () => {
     }
   }, [gallery]);
 
-  const openModal = (image: Image) => {
-    setSelectedImage(image);
+  const openModal = (url: string) => {
+    setSelectedImage(url);
     setIsOpen(true);
   };
+
 
   const closeModal = () => {
     setIsOpen(false);

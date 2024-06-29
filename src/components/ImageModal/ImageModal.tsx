@@ -23,12 +23,17 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export default function ImageModal({ open, selectedImage, onClose }) {
+interface ModalImage {
+    open: boolean,
+    selectedImage: string | null;
+    onClose: () => void
+}
+export default function ImageModal({ open, selectedImage, onClose }: ModalImage) {
     return (
         <Modal isOpen={open} style={customStyles} shouldCloseOnOverlayClick={true}
             shouldCloseOnEsc={true} onRequestClose={onClose} contentLabel="Example Modal">
             {selectedImage && (
-                <img className={css.image} src={selectedImage} alt={selectedImage.alt_description} />
+                <img className={css.image} src={selectedImage} alt={selectedImage} />
             )}
         </Modal>
     );
